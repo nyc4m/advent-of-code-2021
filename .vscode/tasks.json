@@ -1,0 +1,31 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "command": "make run DAY=${input:day}",
+      "problemMatcher": ["$deno"],
+      "label": "Execute a specific day"
+    },
+    {
+      "type": "shell",
+      "command": "make test DAY=${input:day} -- --watch",
+      "label": "Execute test for specific day and start watching for file changes",
+      "problemMatcher": ["$deno"]
+    },
+    {
+      "type": "shell",
+      "command": "make create DAY=${input:day}",
+      "label": "Create a new day",
+      "problemMatcher": ["$deno"]
+    }
+  ],
+  "inputs": [
+    {
+      "id": "day",
+      "description": "Which day to execute",
+      "default": "1",
+      "type": "promptString"
+    }
+  ]
+}
