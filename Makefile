@@ -7,4 +7,4 @@ test:
 fmt: 
 	deno fmt src/*.ts
 create: 
-	mkdir -p ./src/day$(DAY) && cd ./src/day$(DAY) && touch index.ts && touch input.day$(DAY) && touch lib.ts && touch day$(DAY).test.ts
+	touch inputs/day$(DAY) && mkdir -p ./src/day$(DAY) && cd ./src/day$(DAY) && touch index.ts && touch lib.ts && touch day$(DAY).test.ts
