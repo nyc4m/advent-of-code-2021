@@ -33,7 +33,7 @@ export async function readInputFor<A, B, C>(
     else if (op1 && op2 && op3) return op3(op2(op1(content)));
     else return content;
   } catch {
-    throw new Error("The input for day1 cannot be found");
+    throw new Error(`The input for ${inputName} cannot be found`);
   }
 }
 
