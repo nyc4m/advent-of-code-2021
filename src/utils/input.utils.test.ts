@@ -6,12 +6,12 @@ import {
 } from "../../deps.ts";
 import { mapToNumbers, readInputFor, splitByLines } from "./input.utils.ts";
 Deno.test("that it throws if the input file doesn't exist", () => {
-  Deno.readTextFile = () => Promise.reject();
+  Deno.readTextFile = () => Promise.reject(new Error("testing"));
 
   assertRejects(
     () => readInputFor("day1"),
     Error,
-    "The input for day1 cannot be found"
+    "Cannot read the input for day1 (reason: 'testing')"
   );
 });
 
