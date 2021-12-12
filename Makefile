@@ -1,7 +1,7 @@
 DAY?=1
 
 run:
-	deno run --allow-read src/day$(DAY)/index.ts
+	deno run --unstable --allow-read src/day$(DAY)/index.ts
 test:
 	deno test --unstable src/day$(DAY) --watch
 fmt: 
