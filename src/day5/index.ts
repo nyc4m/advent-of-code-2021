@@ -1,19 +1,30 @@
 import { readInputFor, splitByLines } from "../utils/input.utils.ts";
 import {
-  parseLines,
   filterLinesForPart1,
-  computeAllPossibleCrossing,
+  findNumberOfCrossings,
+  parseLines,
 } from "./lib.ts";
 
-const lines = await readInputFor(
+const {diagonalLess, lines} = await readInputFor(
   "day5",
   splitByLines,
   parseLines,
-  filterLinesForPart1
+  lines => {
+    return {
+      diagonalLess: filterLinesForPart1(lines),
+      lines
+    }
+  }
 );
 
-const wrongAnswers = [9413, 18565];
+const wrongAnswers = [9413, 18565, 5992];
 
-const answer = computeAllPossibleCrossing(lines);
+const crossingsWithoutDiagonals = findNumberOfCrossings(diagonalLess);
+const crossings = findNumberOfCrossings(lines)
 
-console.log(`part1: ${answer} ${wrongAnswers.includes(answer) ? "❌" : "✅"}`);
+//Correct answer 5835
+console.log(
+  `part1: ${crossingsWithoutDiagonals} ${wrongAnswers.includes(crossingsWithoutDiagonals) ? "❌" : "✅"}`,
+);
+
+console.log(`part2: ${crossings}`)
