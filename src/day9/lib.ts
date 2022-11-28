@@ -1,7 +1,7 @@
 export function* neighboursFrom(
   heightMap: number[][],
   y: number,
-  x: number
+  x: number,
 ): IterableIterator<number> {
   yield Number.isInteger(heightMap[y][x + 1])
     ? heightMap[y][x + 1]
@@ -46,7 +46,7 @@ export function saveLowestPointPosition(): LowestPointAction<
 
 export function findLowestPoints<T, R = T>(
   heightMap: number[][],
-  onLowestPoint: LowestPointAction<R>
+  onLowestPoint: LowestPointAction<R>,
 ): R {
   for (let y = 0; y < heightMap.length; y++) {
     for (let x = 0; x < heightMap[y].length; x++) {
@@ -56,7 +56,7 @@ export function findLowestPoints<T, R = T>(
       }
       const minValue = Math.min(
         heightMap[y][x],
-        ...Array.from(neighboursFrom(heightMap, y, x))
+        ...Array.from(neighboursFrom(heightMap, y, x)),
       );
       if (minValue === heightMap[y][x]) {
         onLowestPoint.action(minValue, { y, x });
@@ -70,7 +70,7 @@ export function exploreBasin(
   heightMap: number[][],
   y: number,
   x: number,
-  alreadyVisited = new Set<string>()
+  alreadyVisited = new Set<string>(),
 ): number[] {
   if (alreadyVisited.has(`${y}${x}`)) {
     return [];

@@ -1,5 +1,5 @@
 import { readInputFor, splitByLines } from "../utils/input.utils.ts";
-import { parsePolymerInstructions, LinkedList } from "./lib.ts";
+import { LinkedList, parsePolymerInstructions } from "./lib.ts";
 import { Collections } from "../../deps.ts";
 
 const { instructions, polymerChain } = await readInputFor(
@@ -11,7 +11,7 @@ const { instructions, polymerChain } = await readInputFor(
       polymerChain: LinkedList.from(polymerStarter),
       instructions: parsePolymerInstructions(instructions),
     };
-  }
+  },
 );
 
 for (let i = 0; i < 40; i++) {
@@ -32,7 +32,7 @@ for (let i = 0; i < 40; i++) {
 
 const countByletters = Collections.mapValues(
   Collections.groupBy([...polymerChain], (i) => i.value),
-  (v) => v.length
+  (v) => v.length,
 );
 
 const mostCommon = Collections.maxBy(
@@ -40,7 +40,7 @@ const mostCommon = Collections.maxBy(
     letter: key,
     value: countByletters[key],
   })),
-  (x) => x.value
+  (x) => x.value,
 );
 
 const leastCommon = Collections.minBy(
@@ -48,7 +48,7 @@ const leastCommon = Collections.minBy(
     letter: key,
     value: countByletters[key],
   })),
-  (x) => x.value
+  (x) => x.value,
 );
 
 console.log(`part1: ${mostCommon!.value - leastCommon!.value}`);

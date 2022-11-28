@@ -11,7 +11,8 @@ Deno.test({
 });
 
 Deno.test({
-  name: "that it should find 168 fuel for position 5 for crabs engine (aoc example)",
+  name:
+    "that it should find 168 fuel for position 5 for crabs engine (aoc example)",
   fn() {
     assertEquals(computeFuelForPosition(positionsSample, 5, crabEngine), 168);
   },

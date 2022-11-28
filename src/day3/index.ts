@@ -1,10 +1,10 @@
 import { readInputFor, splitByLines } from "../utils/input.utils.ts";
 import {
-  createBinary,
   computeRate,
-  mostFrequent,
-  leastFrequent,
   computingGazRating,
+  createBinary,
+  leastFrequent,
+  mostFrequent,
 } from "./lib.ts";
 
 const content = await readInputFor("day3", splitByLines);
@@ -14,7 +14,7 @@ console.log(
   `part1: ${
     computeRate(binaryDigits, mostFrequent) *
     computeRate(binaryDigits, leastFrequent)
-  }`
+  }`,
 );
 
 const o2 = computingGazRating(binaryDigits, mostFrequent);

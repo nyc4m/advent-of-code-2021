@@ -22,13 +22,13 @@ Deno.test({
       "that adding an other element sets the next property  from head",
       () => {
         assertEquals(linkedList.head?.next, { value: 3, next: null });
-      }
+      },
     );
 
     await test.step("that it can be used as an iterable", () => {
       assertEquals(
         Array.from(linkedList).map((n) => n.value),
-        [1, 3]
+        [1, 3],
       );
     });
 
@@ -53,7 +53,7 @@ Deno.test({
 
     assertEquals(
       Array.from(linkedList).map((n) => n.value),
-      ["N", "N", "C", "B"]
+      ["N", "N", "C", "B"],
     );
   },
 });
@@ -70,7 +70,7 @@ Deno.test({
     await test.step("that it keeps the correct order", () => {
       assertEquals(
         Array.from(linkedList).map((i) => i.value),
-        ["N", "N", "H", "C", "B"]
+        ["N", "N", "H", "C", "B"],
       );
     });
   },
@@ -84,7 +84,7 @@ Deno.test({
       new Map([
         ["CH", "B"],
         ["HH", "N"],
-      ])
+      ]),
     );
   },
 });

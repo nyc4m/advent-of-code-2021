@@ -2,7 +2,7 @@ export class Point {
   private constructor(
     readonly x: number,
     readonly y: number,
-    readonly z: number
+    readonly z: number,
   ) {}
   static with({ x, y, z }: Record<"x" | "y" | "z", number>): Point {
     return new Point(x, y, z);
@@ -16,14 +16,14 @@ export class Point {
 export class Cell {
   private constructor(
     readonly point: Point,
-    public content: { value: number; checked: boolean }
+    public content: { value: number; checked: boolean },
   ) {}
 
   static from(
     board: number,
     x: number,
     y: number,
-    content: { value: number; checked: boolean }
+    content: { value: number; checked: boolean },
   ): Cell {
     return new Cell(Point.with({ z: board, x, y }), content);
   }
@@ -68,7 +68,7 @@ export class Board {
           Cell.from(boardId, i, currentLine, {
             value: Number(ns[i]),
             checked: false,
-          })
+          }),
         );
       }
       currentLine++;
@@ -92,7 +92,7 @@ export class Board {
     const cell = this.boards.get(Point.with({ z: board, x, y }).key);
     if (!cell) {
       throw new Error(
-        `cell at board ${board} (x: ${x}, y: ${y}) doesn not exist`
+        `cell at board ${board} (x: ${x}, y: ${y}) doesn not exist`,
       );
     }
     return cell;
@@ -106,7 +106,7 @@ export class Board {
     const maxX = Math.max(...this.values.map((values) => values.point.x));
     const maxY = Math.max(...this.values.map((values) => values.point.y));
     const boardNumber = Math.max(
-      ...this.values.map((values) => values.point.z)
+      ...this.values.map((values) => values.point.z),
     );
 
     for (let board = 1; board <= boardNumber; board++) {
@@ -125,7 +125,7 @@ export class Board {
   private checkDimensionIsFilled(
     accessor: (c: Cell) => number,
     view: ReadonlyArray<Cell>,
-    dimensionSize: number
+    dimensionSize: number,
   ): boolean {
     for (let d = 0; d < dimensionSize; d++) {
       const hasFullLine = view

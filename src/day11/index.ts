@@ -31,9 +31,11 @@ for (let x = 0; x < 100; x++) {
 }
 
 console.log(
-  `part1: ${states
-    .flatMap((state) => state.flashes)
-    .reduce((sum, flash) => flash + sum, 0)}`
+  `part1: ${
+    states
+      .flatMap((state) => state.flashes)
+      .reduce((sum, flash) => flash + sum, 0)
+  }`,
 );
 
 while (true) {

@@ -18,7 +18,7 @@ Deno.test({
         [2, 9, 2, 9, 2],
         [2, 9, 9, 9, 2],
         [2, 2, 2, 2, 2],
-      ]
+      ],
     );
   },
 });
@@ -40,7 +40,7 @@ Deno.test({
         [2, 3, 0, 3, 2],
         [2, 3, 3, 3, 2],
         [2, 2, 2, 2, 2],
-      ]
+      ],
     );
   },
 });
@@ -140,7 +140,7 @@ Deno.test({
         [2, 3, 4, 4, 3],
         [2, 2, 2, 2, 2],
         [2, 2, 2, 2, 2],
-      ]
+      ],
     );
   },
 });
@@ -226,7 +226,8 @@ Deno.test({
   },
 ].forEach(({ name, input, expected }) => {
   Deno.test({
-    name: `that it if a flashing fish causes an other fish to flash, it also flashes during this turn (${name})`,
+    name:
+      `that it if a flashing fish causes an other fish to flash, it also flashes during this turn (${name})`,
     fn() {
       assertEquals(executeCycle(input).fishes, expected);
     },
@@ -244,7 +245,7 @@ Deno.test({
         [1, 9, 9, 9, 1],
         [1, 1, 1, 1, 1],
       ]).flashes,
-      9
+      9,
     );
   },
 });

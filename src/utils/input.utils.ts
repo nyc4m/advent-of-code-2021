@@ -4,27 +4,27 @@ export function readInputFor(inputName: `day${number}`): Promise<string>;
 
 export function readInputFor<A>(
   inputName: `day${number}`,
-  op1: Operation<string, A>
+  op1: Operation<string, A>,
 ): Promise<A>;
 
 export function readInputFor<A, B>(
   inputName: `day${number}`,
   op1: Operation<string, A>,
-  op2: Operation<A, B>
+  op2: Operation<A, B>,
 ): Promise<B>;
 
 export function readInputFor<A, B, C>(
   inputName: `day${number}`,
   op1: Operation<string, A>,
   op2: Operation<A, B>,
-  op3: Operation<B, C>
+  op3: Operation<B, C>,
 ): Promise<C>;
 
 export async function readInputFor<A, B, C>(
   inputName: `day${number}`,
   op1?: Operation<string, A>,
   op2?: Operation<A, B>,
-  op3?: Operation<B, C>
+  op3?: Operation<B, C>,
 ) {
   try {
     const content = await Deno.readTextFile(`./inputs/${inputName}`);
@@ -34,7 +34,7 @@ export async function readInputFor<A, B, C>(
     else return content;
   } catch (e) {
     throw new Error(
-      `Cannot read the input for ${inputName} (reason: '${e.message}')`
+      `Cannot read the input for ${inputName} (reason: '${e.message}')`,
     );
   }
 }

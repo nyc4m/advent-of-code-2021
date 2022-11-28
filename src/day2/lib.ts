@@ -7,7 +7,7 @@ export function parseSubmarineMoves(move: string): Move {
 }
 
 export function sumMoves(
-  moves: ReadonlyArray<Move>
+  moves: ReadonlyArray<Move>,
 ): Record<"x" | "y", number> {
   return moves.reduce(
     (position, move) => {
@@ -20,12 +20,12 @@ export function sumMoves(
           return { ...position, x: position.x + move.value };
       }
     },
-    { x: 0, y: 0 }
+    { x: 0, y: 0 },
   );
 }
 
 export function sumMovesUsingAim(
-  moves: ReadonlyArray<Move>
+  moves: ReadonlyArray<Move>,
 ): Record<"x" | "y", number> {
   let aim = 0;
   return moves.reduce(
@@ -44,6 +44,6 @@ export function sumMovesUsingAim(
           };
       }
     },
-    { x: 0, y: 0 }
+    { x: 0, y: 0 },
   );
 }

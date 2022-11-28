@@ -4,7 +4,7 @@ import { simulateDays } from "./lib.ts";
 const fishes = await readInputFor(
   "day6",
   (input) => input.split(","),
-  mapToNumbers
+  mapToNumbers,
 );
 
 console.log(`part1: ${simulateDays(80, fishes)}`);

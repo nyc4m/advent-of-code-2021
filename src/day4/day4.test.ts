@@ -30,7 +30,7 @@ Deno.test("that Input is parsed", async (t) => {
         .put(Cell.notChecked(2, 0, 0, 14))
         .put(Cell.notChecked(2, 1, 0, 15))
         .put(Cell.notChecked(2, 0, 1, 18))
-        .put(Cell.notChecked(2, 1, 1, 19))
+        .put(Cell.notChecked(2, 1, 1, 19)),
     );
   });
 });
@@ -54,7 +54,7 @@ Deno.test(
     assert(!board.at(1, 1, 0).content.checked);
     assert(board.at(2, 0, 0).content.checked);
     assert(board.at(2, 1, 1).content.checked);
-  }
+  },
 );
 
 Deno.test("that board 1 should have won because it has a full line", () => {

@@ -54,7 +54,7 @@ export class LinkedList<T> {
 }
 
 export function parsePolymerInstructions(
-  instructions: string[]
+  instructions: string[],
 ): ReadonlyMap<string, string> {
   const parsedInstructions = new Map();
   return instructions.reduce((parsed, instruction) => {

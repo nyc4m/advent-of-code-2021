@@ -17,7 +17,7 @@ Deno.test({
     ];
     assertEquals(
       Array.from(neighboursFrom(heightMap, 1, 1)).sort(),
-      [2, 4, 6, 8].sort()
+      [2, 4, 6, 8].sort(),
     );
   },
 });
@@ -32,7 +32,7 @@ Deno.test({
     ];
     assertEquals(
       Array.from(neighboursFrom(heightMap, 2, 2)).sort(),
-      [Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER, 8, 6].sort()
+      [Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER, 8, 6].sort(),
     );
   },
 });
@@ -49,9 +49,9 @@ Deno.test({
           [8, 7, 6, 7, 8, 9, 6, 7, 8, 9],
           [9, 8, 9, 9, 9, 6, 5, 6, 7, 8],
         ],
-        computeRisk()
+        computeRisk(),
       ),
-      15
+      15,
     );
   },
 });
@@ -68,14 +68,14 @@ Deno.test({
           [8, 7, 6, 7, 8, 9, 6, 7, 8, 9],
           [9, 8, 9, 9, 9, 6, 5, 6, 7, 8],
         ],
-        saveLowestPointPosition()
+        saveLowestPointPosition(),
       ),
       [
         { y: 0, x: 1 },
         { y: 0, x: 9 },
         { y: 2, x: 2 },
         { y: 4, x: 6 },
-      ]
+      ],
     );
   },
 });
@@ -107,9 +107,9 @@ Deno.test({
             [9, 8, 9, 9, 9, 6, 5, 6, 7, 8],
           ],
           y,
-          x
+          x,
         ).sort(),
-        expected
+        expected,
       );
     },
   });

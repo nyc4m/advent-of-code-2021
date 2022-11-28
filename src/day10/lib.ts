@@ -1,6 +1,6 @@
 export type ClosingToken = ")" | "]" | "}" | ">";
 export function findFirstCorruptedCharacter(
-  input: string
+  input: string,
 ): ClosingToken | null {
   const expectedClosingTokens = [] as ClosingToken[];
   for (const char of input) {

@@ -9,7 +9,7 @@ import { computeFuelForPosition, crabEngine, distance } from "./lib.ts";
 const crabsPosition = await readInputFor(
   "day7",
   (input) => input.split(","),
-  mapToNumbers
+  mapToNumbers,
 );
 
 const possiblePositions = crabsPosition.map((position) =>

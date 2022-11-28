@@ -1,4 +1,4 @@
-import { assertEquals, assertArrayIncludes } from "../../deps.ts";
+import { assertArrayIncludes, assertEquals } from "../../deps.ts";
 import {
   computeIncreases,
   computeWindows,
@@ -16,7 +16,7 @@ Deno.test("that it has not increased", () => {
 Deno.test("that it has increased 7 times (from aoc)", () => {
   assertEquals(
     computeIncreases([199, 200, 208, 210, 200, 207, 240, 269, 260, 263]),
-    7
+    7,
   );
 });
 
@@ -33,8 +33,8 @@ Deno.test("that it's summing the windows", () => {
       intermediateDepthsSum([
         [12, 23, 34],
         [23, 34, 678],
-      ])
+      ]),
     ),
-    [12 + 23 + 34, 23 + 34 + 678]
+    [12 + 23 + 34, 23 + 34 + 678],
   );
 });

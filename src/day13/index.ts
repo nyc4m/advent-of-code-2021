@@ -14,7 +14,7 @@ const { points, folds } = await readInputFor(
       points: input.points.map(parsePoint),
       folds: input.folds.map(parseFold),
     };
-  }
+  },
 );
 
 console.log(`before folding there are ${points.length} points`);

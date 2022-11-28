@@ -51,7 +51,7 @@ Deno.test({
   fn() {
     assertEquals(
       completeMissingSequenceOf("[({(<(())[]>[[{[]{<()<>>"),
-      "}}]])})]"
+      "}}]])})]",
     );
   },
 });
@@ -61,7 +61,7 @@ Deno.test({
   fn() {
     assertEquals(
       computeMissingSequenceScores(incompleteSubsystem),
-      [288957, 5566, 1480781, 995444, 294]
+      [288957, 5566, 1480781, 995444, 294],
     );
   },
 });

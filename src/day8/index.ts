@@ -4,7 +4,7 @@ import { parseSegments } from "./lib.ts";
 const signalsAndOutput = await readInputFor(
   "day8",
   splitByLines,
-  parseSegments
+  parseSegments,
 );
 
 const outputs = signalsAndOutput.map((x) => x.outputDigits);
@@ -29,6 +29,8 @@ for (const digits of outputs) {
 }
 
 console.log(
-  `part1: ${Array.from(occurences.values()).reduce((sum, val) => sum + val, 0)}`
+  `part1: ${
+    Array.from(occurences.values()).reduce((sum, val) => sum + val, 0)
+  }`,
 );
 console.log(occurences);

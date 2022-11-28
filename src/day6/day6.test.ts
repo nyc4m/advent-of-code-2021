@@ -26,6 +26,6 @@ Deno.test("that it inintialize the aquarium", () => {
       [6, 0],
       [7, 0],
       [8, 0],
-    ])
+    ]),
   );
 });

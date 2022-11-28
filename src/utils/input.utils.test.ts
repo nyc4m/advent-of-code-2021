@@ -1,7 +1,7 @@
 import {
-  assertRejects,
   assertArrayIncludes,
   assertEquals,
+  assertRejects,
   assertThrows,
 } from "../../deps.ts";
 import { mapToNumbers, readInputFor, splitByLines } from "./input.utils.ts";
@@ -11,7 +11,7 @@ Deno.test("that it throws if the input file doesn't exist", () => {
   assertRejects(
     () => readInputFor("day1"),
     Error,
-    "Cannot read the input for day1 (reason: 'testing')"
+    "Cannot read the input for day1 (reason: 'testing')",
   );
 });
 
@@ -31,7 +31,7 @@ Deno.test("that it throws an error when a number is NaN", () => {
   assertThrows(
     () => mapToNumbers(numbers),
     Error,
-    "'hello' is not a number, please verify the input"
+    "'hello' is not a number, please verify the input",
   );
 });
 
@@ -43,9 +43,9 @@ Deno.test("that readFile accepts operators", async () => {
     await readInputFor(
       "day1",
       () => 1,
-      () => "world"
+      () => "world",
     ),
-    "world"
+    "world",
   );
   assertEquals(
     await readInputFor(
@@ -54,8 +54,8 @@ Deno.test("that readFile accepts operators", async () => {
       () => "world",
       () => ({
         hello: "world",
-      })
+      }),
     ),
-    { hello: "world" }
+    { hello: "world" },
   );
 });

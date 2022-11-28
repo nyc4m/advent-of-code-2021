@@ -8,7 +8,7 @@ export function createBinary(number: string): BinaryNumber {
 
 export function computeRate(
   binaryInput: ReadonlyArray<BinaryNumber>,
-  strategy: (b: BinaryNumber) => "1" | "0"
+  strategy: (b: BinaryNumber) => "1" | "0",
 ): number {
   const transposedBinary = ld.unzip(binaryInput);
 
@@ -26,19 +26,19 @@ export function leastFrequent(b: BinaryNumber): "1" | "0" {
 
 export function computingGazRating(
   b: ReadonlyArray<BinaryNumber>,
-  strategy: (b: BinaryNumber) => "1" | "0"
+  strategy: (b: BinaryNumber) => "1" | "0",
 ): number;
 
 export function computingGazRating(
   b: ReadonlyArray<BinaryNumber>,
   strategy: (b: BinaryNumber) => "1" | "0",
-  offset?: number
+  offset?: number,
 ): Array<BinaryNumber> | number;
 
 export function computingGazRating(
   b: ReadonlyArray<BinaryNumber>,
   strategy: (b: BinaryNumber) => "1" | "0",
-  offset = 0
+  offset = 0,
 ): Array<BinaryNumber> | number {
   if (b.length === 1) {
     return parseInt(b[0].join(""), 2);
@@ -47,6 +47,6 @@ export function computingGazRating(
   return computingGazRating(
     b.filter((x) => x[offset] === oneOrZero),
     strategy,
-    offset + 1
+    offset + 1,
   );
 }

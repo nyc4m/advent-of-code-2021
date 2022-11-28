@@ -1,7 +1,7 @@
 import {
-  splitByLines,
-  readInputFor,
   mapToNumbers,
+  readInputFor,
+  splitByLines,
 } from "../utils/input.utils.ts";
 import {
   computeIncreases,
@@ -14,7 +14,9 @@ const depth = await readInputFor("day1", splitByLines, mapToNumbers);
 console.log(`part 1: ${computeIncreases(depth)}`);
 
 console.log(
-  `part 2: ${computeIncreases([
-    ...intermediateDepthsSum(computeWindows(depth)),
-  ])}`
+  `part 2: ${
+    computeIncreases([
+      ...intermediateDepthsSum(computeWindows(depth)),
+    ])
+  }`,
 );

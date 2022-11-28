@@ -11,7 +11,7 @@ export function computeIncreases(depths: ReadonlyArray<number>): number {
 }
 
 export function* computeWindows(
-  depths: number[]
+  depths: number[],
 ): IterableIterator<[number, number, number]> {
   for (let i = 0; i < depths.length - 2; i++) {
     yield [depths[i], depths[i + 1], depths[i + 2]];
@@ -21,7 +21,7 @@ export function* computeWindows(
 export function* intermediateDepthsSum(
   windows:
     | Array<[number, number, number]>
-    | IterableIterator<[number, number, number]>
+    | IterableIterator<[number, number, number]>,
 ) {
   for (const window of windows) {
     yield window.reduce((sum, depth) => sum + depth, 0);

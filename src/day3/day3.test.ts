@@ -1,10 +1,10 @@
 import { assertEquals } from "../../deps.ts";
 import {
+  computeRate,
+  computingGazRating,
   createBinary,
   leastFrequent,
   mostFrequent,
-  computeRate,
-  computingGazRating,
 } from "./lib.ts";
 
 Deno.test("that it parses binary numbers", async (t) => {
@@ -40,7 +40,7 @@ Deno.test("that it parses binary numbers", async (t) => {
         "0",
         "0",
       ]);
-    }
+    },
   );
 
   const parsedBinary = input.map((c) => createBinary(c));

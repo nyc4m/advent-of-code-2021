@@ -16,17 +16,18 @@ export function parseFold(input: string): Fold {
   }
   const axis = match?.groups?.axis;
   const value = match?.groups?.value;
-  if (axis === undefined || value === undefined)
+  if (axis === undefined || value === undefined) {
     throw new Error(
-      `value or axis is not matched (axis=${axis}, value=${value})`
+      `value or axis is not matched (axis=${axis}, value=${value})`,
     );
+  }
   return { axis: axis as "x" | "y", value: Number(value) };
 }
 
 export function foldOnAxis(
   point: Readonly<Point>,
   value: number,
-  axis: keyof Point
+  axis: keyof Point,
 ): Point {
   const distance = Math.abs(point[axis] - value);
   return { ...point, [axis]: value - distance };
@@ -34,15 +35,15 @@ export function foldOnAxis(
 
 export function executeFold(
   points: Readonly<Readonly<Point>[]>,
-  fold: Fold
+  fold: Fold,
 ): Point[] {
   const [under, above] = Collections.partition(
     points,
-    (p) => p[fold.axis] > fold.value
+    (p) => p[fold.axis] > fold.value,
   );
   const foldedPoints = under.map((p) => foldOnAxis(p, fold.value, fold.axis));
   return Collections.distinctBy(
     [...above, ...foldedPoints],
-    (p) => `${p.y}${p.x}`
+    (p) => `${p.y}${p.x}`,
   );
 }

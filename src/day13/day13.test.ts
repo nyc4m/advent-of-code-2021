@@ -1,5 +1,5 @@
 import { assertEquals } from "../../deps.ts";
-import { foldOnAxis, parsePoint, parseFold } from "./lib.ts";
+import { foldOnAxis, parseFold, parsePoint } from "./lib.ts";
 
 Deno.test({
   name: "that it parses coordinates",

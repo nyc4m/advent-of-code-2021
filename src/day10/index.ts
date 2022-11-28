@@ -1,8 +1,8 @@
 import { bench, runBenchmarks } from "../../deps.ts";
 import { readInputFor, splitByLines } from "../utils/input.utils.ts";
 import {
-  computeSyntaxErrorScore,
   computeMissingSequenceScores,
+  computeSyntaxErrorScore,
   getScore,
 } from "./lib.ts";
 

@@ -15,7 +15,7 @@ import {
     `that "${c.input}" will register as ${JSON.stringify(c.expected)}`,
     () => {
       assertEquals(parseSubmarineMoves(c.input), c.expected);
-    }
+    },
   );
 });
 

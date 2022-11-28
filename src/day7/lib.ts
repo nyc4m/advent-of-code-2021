@@ -3,7 +3,7 @@ type FuelStrategy = (start: number, end: number) => number;
 export function computeFuelForPosition(
   positions: ReadonlyArray<number>,
   destination: number,
-  algo: FuelStrategy
+  algo: FuelStrategy,
 ): number {
   return positions
     .map((position) => algo(position, destination))
